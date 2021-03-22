@@ -13,18 +13,18 @@ class MaterialHeader extends Header {
   final double displacement;
 
   /// 颜色
-  final Animation<Color> valueColor;
+  final Animation<Color>? valueColor;
 
   /// 背景颜色
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   final LinkHeaderNotifier linkNotifier = LinkHeaderNotifier();
 
   MaterialHeader({
     this.key,
     this.displacement = 40.0,
-    required this.valueColor,
-    required this.backgroundColor,
+    this.valueColor,
+    this.backgroundColor,
     Duration completeDuration = const Duration(seconds: 1),
     bool enableHapticFeedback = false,
   }) : super(
@@ -75,16 +75,16 @@ class MaterialHeader extends Header {
 class MaterialHeaderWidget extends StatefulWidget {
   final double displacement;
   // 颜色
-  final Animation<Color> valueColor;
+  final Animation<Color>? valueColor;
   // 背景颜色
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final LinkHeaderNotifier linkNotifier;
 
   const MaterialHeaderWidget({
     Key? key,
     required this.displacement,
-    required this.valueColor,
-    required this.backgroundColor,
+    this.valueColor,
+    this.backgroundColor,
     required this.linkNotifier,
   }) : super(key: key);
 

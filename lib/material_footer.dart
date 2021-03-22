@@ -9,18 +9,18 @@ class MaterialFooter extends Footer {
   final double displacement;
 
   /// 颜色
-  final Animation<Color> valueColor;
+  final Animation<Color>? valueColor;
 
   /// 背景颜色
-  final Color backgroundColor;
+  final Color? backgroundColor;
 
   final LinkFooterNotifier linkNotifier = LinkFooterNotifier();
 
   MaterialFooter({
     this.key,
     this.displacement = 40.0,
-    required this.valueColor,
-    required this.backgroundColor,
+    this.valueColor,
+    this.backgroundColor,
     Duration completeDuration = const Duration(seconds: 1),
     bool enableHapticFeedback = false,
     bool enableInfiniteLoad = true,
@@ -74,16 +74,16 @@ class MaterialFooter extends Footer {
 class MaterialFooterWidget extends StatefulWidget {
   final double displacement;
   // 颜色
-  final Animation<Color> valueColor;
+  final Animation<Color>? valueColor;
   // 背景颜色
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final LinkFooterNotifier linkNotifier;
 
   const MaterialFooterWidget({
     Key? key,
     required this.displacement,
-    required this.valueColor,
-    required this.backgroundColor,
+    this.valueColor,
+    this.backgroundColor,
     required this.linkNotifier,
   }) : super(key: key);
 
